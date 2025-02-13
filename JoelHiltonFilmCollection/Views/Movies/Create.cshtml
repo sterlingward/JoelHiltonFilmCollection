@@ -1,0 +1,54 @@
+@model Movie
+
+<h2>Add a Movie</h2>
+
+<!-- Form to submit a new movie -->
+<form asp-action="Create" method="post">
+    
+    <!-- Input field for the movie category -->
+    <label>Category:</label>
+    <input type="text" asp-for="Category" required/>
+
+    <!-- Input field for the movie title -->
+    <label>Title:</label>
+    <input type="text" asp-for="Title" required/>
+
+    <!-- Input field for the release year -->
+    <label>Year:</label>
+    <input type="number" asp-for="Year" required/>
+
+    <!-- Input field for the director's name -->
+    <label>Director:</label>
+    <input type="text" asp-for="Director" required/>
+
+    <!-- Dropdown menu for selecting the movie rating -->
+    <label>Rating:</label>
+    <select asp-for="Rating">
+        <option value="G">G</option>
+        <option value="PG">PG</option>
+        <option value="PG-13">PG-13</option>
+        <option value="R">R</option>
+    </select>
+
+    <!-- Dropdown menu to select whether the movie is edited -->
+    <label>Edited:</label>
+    <div>
+        <label>Edited:</label>
+        <select asp-for="Edited">
+            <option value="true">Yes</option>
+            <option value="false">No</option>
+        </select>
+    </div>
+
+    <!-- Input field for noting who the movie is lent to (optional) -->
+    <label>Lent To:</label>
+    <input type="text" asp-for="LentTo"/>
+
+    <!-- Input field for notes, limited to 25 characters -->
+    <label>Notes:</label>
+    <input type="text" asp-for="Notes" maxlength="25"/>
+
+    <!-- Submit button to add the movie -->
+    <button type="submit">Add Movie</button>
+
+</form>
